@@ -1,0 +1,186 @@
+# Cloudflare Workers/Pages redirects (static files always win over these rules).
+# Host www/HTTP → HTTPS apex is handled by workers/site.js (not_found_handling serves 404.html).
+
+# Legacy product URLs → EFT Hack
+/cs2-hack        /eft-hack   301
+
+# Legacy CS2 media paths → Overwatch assets
+/media/cs2-wallhack-players.png   /media/eft-wallhack-players.png   301
+/media/cs2-esp-street.png         /media/eft-esp-street.png         301
+/media/cs2-esp-health.jpg         /media/eft-esp-aimbot.png         301
+/media/cs2-radar-skeleton.png     /media/eft-radar-esp.png          301
+/media/cs2-hero-poster.jpg        /media/eft-hero-poster.jpg        301
+/media/cs2-product-poster.jpg     /media/eft-product-poster.jpg     301
+/videos/cs2-hero-loop.mp4         /videos/eft-hero-loop.mp4         301
+/videos/cs2-product-loop.mp4      /videos/eft-product-loop.mp4      301
+/cs2-hacks       /eft-hack   301
+/cs2-cheats      /eft-hack   301
+/counter-strike-2-hack /eft-hack 301
+
+# Trailing-slash canonicalization
+/eft-hack/      /eft-hack      301
+/dayz-cheats    /eft-hack      301
+/dayz-cheats/   /eft-hack      301
+/forums/        /forums        301
+/reviews/       /reviews       301
+/faq/           /faq           301
+/support/       /support       301
+/privacy/       /privacy       301
+/terms/         /terms         301
+/refunds/       /refunds       301
+/refund/        /refunds       301
+/refund-policy  /refunds       301
+/refund-policy/ /refunds       301
+/privacy-policy /privacy       301
+/privacy-policy/ /privacy      301
+/terms-of-use   /terms         301
+/terms-of-use/  /terms         301
+/terms-of-service /terms       301
+/terms-of-service/ /terms      301
+
+# Primary SEO keyword variants → product or home
+/dayz-hacks     /eft-hack   301
+/dayz-hacks/    /eft-hack   301
+/dayz-hack      /eft-hack   301
+/dayz-hack/     /eft-hack   301
+/dayz-cheat     /eft-hack   301
+/dayz-cheat/    /eft-hack   301
+/dayz-standalone-cheats  /eft-hack   301
+/dayz-standalone-cheats/ /eft-hack   301
+/dayz-standalone-cheat   /eft-hack   301
+/dayz-standalone-cheat/  /eft-hack   301
+/dayz-standalone-hacks   /eft-hack   301
+/dayz-standalone-hacks/  /eft-hack   301
+/dayz-standalone-hack    /eft-hack   301
+/dayz-standalone-hack/   /eft-hack   301
+/cheats-dayz    /eft-hack   301
+/cheats-dayz/   /eft-hack   301
+/hacks-dayz     /eft-hack   301
+/hacks-dayz/    /eft-hack   301
+/dayz-aimbot    /eft-hack   301
+/dayz-aimbot/   /eft-hack   301
+/dayz-esp       /eft-hack   301
+/dayz-esp/      /eft-hack   301
+/dayz-loot-esp  /eft-hack   301
+/dayz-loot-esp/ /eft-hack   301
+/dayz-wallhack  /eft-hack   301
+/dayz-wallhack/ /eft-hack   301
+/dayz-radar     /eft-hack   301
+/dayz-radar/    /eft-hack   301
+/dayz-radar-hack  /eft-hack 301
+/dayz-radar-hack/ /eft-hack 301
+/dayz-spoofer   /eft-hack   301
+/dayz-spoofer/  /eft-hack   301
+/undetected-dayz-cheats  /eft-hack   301
+/undetected-dayz-cheats/ /eft-hack   301
+/undetected-dayz-hacks   /eft-hack   301
+/undetected-dayz-hacks/  /eft-hack   301
+/battleye-dayz-cheats    /eft-hack   301
+/battleye-dayz-cheats/   /eft-hack   301
+/buy-dayz-cheats   /   301
+/buy-dayz-cheats/  /   301
+/buy-dayz-hacks    /   301
+/buy-dayz-hacks/   /   301
+/guides         /forums        301
+/guides/        /forums        301
+/features-list  /forums/features-list  301
+/setup          /forums/complete-setup 301
+/dayz-setup     /forums/complete-setup 301
+/dayz-cheats-setup /forums/complete-setup 301
+
+# Forum short-slug aliases
+/forums/setup         /forums/complete-setup     301
+/forums/features      /forums/features-list      301
+/forums/aimbot        /forums/aimbot-settings    301
+/forums/esp           /forums/esp-wallhack-guide 301
+/forums/wallhack      /forums/esp-wallhack-guide 301
+/forums/radar         /forums/radar-hack-guide   301
+/forums/antivirus     /forums/disable-antivirus  301
+/forums/defender      /forums/disable-antivirus  301
+/forums/windows       /forums/windows-setup      301
+/forums/stream-proof  /forums/stream-proof-setup 301
+/forums/battleye      /forums/anti-cheat-status         301
+/forums/undetected    /forums/undetected-status  301
+/forums/loader        /forums/loader-errors      301
+/forums/survival      /forums/match-play-guide   301
+/forums/loot-run      /forums/match-play-guide   301
+
+# Legacy Tarkov slugs → EFT Hack product
+/tarkov-cheats   /eft-hack   301
+/tarkov-cheats/  /eft-hack   301
+/eft-cheats      /eft-hack   301
+/eft-cheats/     /eft-hack   301
+/escape-from-tarkov-cheats   /eft-hack   301
+/escape-from-tarkov-cheats/  /eft-hack   301
+/tarkov-hacks   /eft-hack   301
+/tarkov-hacks/  /eft-hack   301
+/eft-hacks      /eft-hack   301
+/eft-hacks/     /eft-hack   301
+/escape-from-tarkov-hacks  /eft-hack   301
+/escape-from-tarkov-hacks/ /eft-hack   301
+/tarkov-aimbot  /eft-hack   301
+/tarkov-esp     /eft-hack   301
+/tarkov-wallhack /eft-hack  301
+/tarkov-radar   /eft-hack   301
+/eft-aimbot     /eft-hack   301
+/eft-esp        /eft-hack   301
+/eft-wallhack   /eft-hack   301
+/buy-tarkov-cheats  /   301
+/buy-tarkov-cheats/ /   301
+/buy-eft-cheats     /   301
+/buy-eft-cheats/    /   301
+
+# Legacy Warzone slugs → EFT Hack product
+/warzone-cheats  /eft-hack   301
+/warzone-cheats/ /eft-hack   301
+/warzone-hacks   /eft-hack   301
+/warzone-hacks/  /eft-hack   301
+/warzone-aimbot  /eft-hack   301
+/warzone-esp     /eft-hack   301
+/warzone-wallhack /eft-hack  301
+/isle-cheats     /eft-hack   301
+/isle-cheats/    /eft-hack   301
+/wardogs-hacks   /eft-hack   301
+/wardogs-hacks/  /eft-hack   301
+/buy-warzone-cheats  /   301
+/buy-warzone-cheats/ /   301
+
+# Legacy forum slugs
+/forums/ricochet-status   /forums/anti-cheat-status   301
+/forums/ricochet-status/  /forums/anti-cheat-status   301
+/forums/battleye-status   /forums/anti-cheat-status   301
+/forums/battleye-status/  /forums/anti-cheat-status   301
+/forums/vac-status        /forums/anti-cheat-status   301
+/forums/vac-status/       /forums/anti-cheat-status   301
+/forums/ranked-play-guide /forums/match-play-guide   301
+/forums/ranked-play-guide/ /forums/match-play-guide  301
+/forums/loot-run-guide    /forums/match-play-guide   301
+/forums/loot-run-guide/   /forums/match-play-guide   301
+/forums/survival-guide    /forums/match-play-guide   301
+/forums/survival-guide/   /forums/match-play-guide   301
+/forums/raid-play-guide   /forums/match-play-guide   301
+/forums/raid-play-guide/  /forums/match-play-guide   301
+
+# Legacy slugs → forums
+/articles       /forums        301
+/articles/      /forums        301
+/articles/*     /forums        301
+/blog/instructions       /forums/complete-setup#quick-checklist  301
+/blog/how-to-load        /forums/complete-setup#load-order       301
+/forums/instructions     /forums/complete-setup#quick-checklist  301
+/forums/instructions/    /forums/complete-setup#quick-checklist  301
+/forums/how-to-load      /forums/complete-setup#load-order       301
+/forums/how-to-load/     /forums/complete-setup#load-order       301
+/blog/:slug/    /forums/:slug  301
+/blog/:slug     /forums/:slug  301
+/forums/:slug/  /forums/:slug  301
+
+# Legacy / alternate sitemap URLs → single sitemap (same host — valid for www + apex GSC)
+/sitemap-pages.xml     /sitemap.xml  301
+/sitemap-products.xml  /sitemap.xml  301
+/sitemap-forums.xml    /sitemap.xml  301
+/sitemap-images.xml    /sitemap.xml  301
+/sitemap-blogs.xml     /sitemap.xml  301
+/sitemap-regions.xml   /sitemap.xml  301
+/sitemap_index.xml     /sitemap.xml  301
+/sitemap.xml/          /sitemap.xml  301
