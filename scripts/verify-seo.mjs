@@ -382,6 +382,9 @@ if (!headers.includes('application/xml; charset=utf-8')) {
 if (!worker.includes('LEGACY_SITEMAP_PATHS') || !worker.includes('isSeoCrawlerFile')) {
   fail('workers/site.js must 301 legacy sitemap paths and serve sitemap on www + apex')
 }
+if (!worker.includes('assetPathCandidates') || !worker.includes('fetchAsset')) {
+  fail('workers/site.js must resolve clean URLs to */index.html for Astro static routes')
+}
 
 const wrangler = readFileSync(join(root, 'wrangler.toml'), 'utf8')
 for (const path of ['/robots.txt', '/sitemap.xml', '/sitemap-index.xml', '/sitemap.css']) {

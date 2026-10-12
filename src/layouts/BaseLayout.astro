@@ -12,6 +12,30 @@ import { buildPageJsonLd } from '../lib/seo'
 import geist400 from '@fontsource/geist/files/geist-latin-400-normal.woff2?url'
 import geist600 from '@fontsource/geist/files/geist-latin-600-normal.woff2?url'
 
+const geistFontFace = `
+@font-face {
+  font-family: 'Geist';
+  font-style: normal;
+  font-weight: 400;
+  font-display: optional;
+  src: url('${geist400}') format('woff2');
+}
+@font-face {
+  font-family: 'Geist';
+  font-style: normal;
+  font-weight: 600;
+  font-display: optional;
+  src: url('${geist600}') format('woff2');
+}
+@font-face {
+  font-family: 'Geist';
+  font-style: normal;
+  font-weight: 700;
+  font-display: optional;
+  src: url('${geist600}') format('woff2');
+}
+`.trim()
+
 type Props = {
   seo: PageSeo
   jsonLdExtra?: unknown[]
@@ -67,6 +91,7 @@ const preloadOg =
     {preloadOg ? (
       <link rel="preload" as="image" href={preloadImageHref} type={imageType} fetchpriority="high" />
     ) : null}
+    <style set:html={geistFontFace} />
     <link rel="preload" as="font" type="font/woff2" href={geist400} crossorigin />
     <link rel="preload" as="font" type="font/woff2" href={geist600} crossorigin />
     {isHome ? (

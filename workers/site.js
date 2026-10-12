@@ -43,6 +43,32 @@ function assetsFetch(env, request, pathname) {
   return env.ASSETS.fetch(new Request(new URL(pathname, 'https://assets.local'), request))
 }
 
+/**
+ * Astro static output uses `/path/index.html` for clean URLs (`trailingSlash: never`).
+ * ASSETS.fetch(`/eft-hack`) returns 404 unless we resolve to `/eft-hack/index.html`.
+ */
+function assetPathCandidates(pathname) {
+  const path = pathname || '/'
+  if (path === '/') return ['/index.html', '/']
+
+  const hasExtension = /\.[a-z0-9]+$/i.test(path.replace(/\/$/, ''))
+  if (hasExtension) return [path]
+
+  const base = path.endsWith('/') ? path.slice(0, -1) : path
+  return [`${base}/index.html`, path, `${path}/index.html`]
+}
+
+async function fetchAsset(env, request, pathname) {
+  const candidates = assetPathCandidates(pathname)
+  let last = null
+  for (const candidate of candidates) {
+    const response = await assetsFetch(env, request, candidate)
+    last = response
+    if (response.status !== 404) return response
+  }
+  return last || assetsFetch(env, request, pathname)
+}
+
 function withHtmlCharset(response) {
   const contentType = response.headers.get('content-type') || ''
   const primary = contentType.split(',')[0].trim()
@@ -103,7 +129,7 @@ export default {
       }
     }
 
-    const assetResponse = await assetsFetch(env, request, url.pathname + url.search)
+    const assetResponse = await fetchAsset(env, request, url.pathname)
     const response = withHtmlCharset(assetResponse)
 
     // Help crawlers + Seobility: advertise preferred host + self-canonical

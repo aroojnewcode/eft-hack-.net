@@ -81,7 +81,7 @@ export const SEO = {
   forums: {
     title: 'EFT Hack Guides | Aimbot, ESP, Radar & Anti-cheat Status',
     description:
-      'EFT hack guides — silent aim, player ESP, radar, antivirus exclusions, menu setup and anti-cheat status articles before you buy.',
+      'EFT hack guides for PC — silent aim, player ESP, radar, BattlEye status, antivirus exclusions, loader setup and menu help before you buy.',
     path: '/forums',
     ogType: 'website',
     image: PAGE_OG.forums,

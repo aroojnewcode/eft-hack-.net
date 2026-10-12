@@ -5,6 +5,8 @@ type VideoBgProps = {
   /** Poster and fallback still. Shown immediately, and to crawlers. */
   image?: string
   imageAlt?: string
+  /** CSS object-position for wide banners (keeps subjects visible under left-side copy). */
+  imagePosition?: string
   /** Short muted loop. Loaded after first paint to protect LCP. */
   video?: string
 }
@@ -13,8 +15,10 @@ type VideoBgProps = {
 export function VideoBg({
   image = EFT_HERO,
   imageAlt = 'Escape From Tarkov hero gameplay preview on the homepage background',
+  imagePosition = 'center',
   video,
 }: VideoBgProps) {
+  const mediaStyle = { objectPosition: imagePosition }
   const wrapRef = useRef<HTMLDivElement>(null)
   const [playVideo, setPlayVideo] = useState(false)
 
@@ -80,15 +84,17 @@ export function VideoBg({
       <img
         src={image}
         alt={imageAlt}
-        width={1920}
-        height={1080}
+        width={1024}
+        height={499}
         decoding="async"
         fetchPriority="high"
-        className="hero-video-bg absolute inset-0 z-[1] h-full w-full object-cover object-center"
+        className="hero-video-bg absolute inset-0 z-[1] h-full w-full object-cover"
+        style={mediaStyle}
       />
       {video && playVideo ? (
         <video
-          className="hero-video-bg absolute inset-0 z-[1] h-full w-full object-cover object-center"
+          className="hero-video-bg absolute inset-0 z-[1] h-full w-full object-cover"
+          style={mediaStyle}
           autoPlay
           muted
           loop

@@ -69,8 +69,8 @@ export function HomePage() {
       <section id="home" className="relative flex min-h-screen flex-col overflow-x-clip">
         <VideoBg
           image="/media/eft-hero-poster.webp"
-          imageAlt="Escape From Tarkov first-person raid with pink ESP wallhack silhouette visible through an outdoor concrete wall"
-          video="/videos/eft-hero-loop.mp4"
+          imageAlt="Escape From Tarkov hero banner — tactical PMCs in a war-torn industrial cityscape at dusk"
+          imagePosition="right center"
         />
 
         <div className="relative z-20 flex min-h-screen flex-col">

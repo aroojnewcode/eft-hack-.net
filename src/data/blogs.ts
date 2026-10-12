@@ -153,7 +153,7 @@ export const BLOGS: BlogPost[] = [
         heading: 'ESP filters and objective lanes',
         body: [
           'Filter overlays: player names, health bars and loot tags only when you need them. Too many labels creates tunnel vision on long hallways or open yards.',
-          'In team fights, pair player ESP with radar so you read rotates onto the objective without staring at the minimap.',
+          'In CQC fights, pair player ESP with radar so you read rotates onto extracts or quest areas without tunnel vision.',
         ],
       },
       {

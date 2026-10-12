@@ -51,8 +51,8 @@ for (const path of requiredTarkovMedia) {
 const heroPosterJpg = join(mediaDir, 'eft-hero-poster.jpg')
 const heroPosterWebp = join(mediaDir, 'eft-hero-poster.webp')
 await sharp(heroPosterJpg)
-  .resize({ width: 1920, withoutEnlargement: true })
-  .webp({ quality: 80, effort: 4 })
+  .resize({ width: 1280, withoutEnlargement: true })
+  .webp({ quality: 72, effort: 4 })
   .toFile(heroPosterWebp)
 
 function overlaySvg(width, height, eyebrow, title, subtitle) {
