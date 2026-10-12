@@ -104,15 +104,10 @@ export function GameProductPage({ guideSlug }: GameProductPageProps) {
                 Feature preview
               </h2>
               <p className="mt-2 max-w-2xl text-sm text-white/45">
-                {EFT_HOME_VIDEO.caption} Use play/pause and the timeline to scrub through the
-                clip.
+                {EFT_HOME_VIDEO.caption} Switch Match, Combat and Push tabs — then tap Video for the
+                full clip.
               </p>
-              <EftProductPreview
-                className="mt-4"
-                wide
-                interactive
-                priority
-              />
+              <EftProductPreview className="mt-4" priority />
             </div>
 
             <div className="mt-10 grid gap-8 lg:mt-12 lg:grid-cols-12 lg:items-start lg:gap-10">

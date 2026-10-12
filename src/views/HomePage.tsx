@@ -6,40 +6,10 @@ import { HeroSearch } from '../components/HeroSearch'
 import { FaqSection } from '../components/FaqSection'
 import { guidePath } from '../data/games'
 import { CheckoutLink } from '../components/CheckoutLink'
-import { FeaturePreviewVideo } from '../components/FeaturePreviewVideo'
+import { FeaturePreviewShowcase } from '../components/FeaturePreviewShowcase'
 import { HOME_FAQS } from '../data/faqs'
 import { HOME_HEADINGS, PRODUCT_PATH, SITE_HOST, SITE_NAME, SITE_PURPOSE } from '../data/site'
 import { BLOGS, blogPath } from '../data/blogs'
-import {
-  EFT_SHOT_ESP_AIMBOT,
-  EFT_SHOT_ESP_STREET,
-  EFT_SHOT_WALLHACK,
-} from '../data/media'
-
-const PREVIEW_SHOTS = [
-  {
-    src: EFT_SHOT_WALLHACK,
-    alt:
-      'Escape From Tarkov wallhack gameplay in a dark building with pink enemy ESP silhouettes through walls and doors',
-    title: 'Wallhack through cover',
-    detail: 'Pink chams on PMCs behind walls before you clear the room.',
-  },
-  {
-    src: EFT_SHOT_ESP_STREET,
-    alt:
-      'Escape From Tarkov ESP chams at TerraGroup containers with green and magenta players visible through a corner',
-    title: 'ESP chams outdoors',
-    detail: 'Colored player highlights through cover at an industrial loot spot.',
-  },
-  {
-    src: EFT_SHOT_ESP_AIMBOT,
-    alt:
-      'Escape From Tarkov warehouse raid with pink and green ESP silhouettes of players through blue shipping containers',
-    title: 'ESP in industrial raids',
-    detail: 'Wallhack silhouettes behind containers during a PMC push.',
-  },
-] as const
-
 const FEATURES = [
   {
     icon: Crosshair,
@@ -169,36 +139,20 @@ export function HomePage() {
 
         <section className="page-x pb-4 pt-16 sm:pt-20" aria-labelledby="feature-preview-heading">
           <div className="mx-auto max-w-6xl">
-            <h2 id="feature-preview-heading" className="sr-only">
-              EFT feature preview
-            </h2>
-            <FeaturePreviewVideo variant="inline" interactive />
-            <p className="mt-5 max-w-4xl text-sm leading-relaxed text-white/80 sm:text-base">
-              <span className="font-semibold text-white">EFT Hack feature preview.</span> Use the
-              player controls to play, pause and scrub the timeline. See player ESP and wallhack overlays
-              in a real match, how player names and health show through cover, and why live anti-cheat
-              status is checked after every patch.
+            <p className="text-xs font-medium uppercase tracking-[0.2em] text-white/45">
+              Feature preview
             </p>
-            <div className="mt-8 grid gap-5 sm:grid-cols-3 sm:gap-4">
-              {PREVIEW_SHOTS.map((shot) => (
-                <figure key={shot.src}>
-                  <img
-                    src={shot.src}
-                    alt={shot.alt}
-                    title={shot.title}
-                    width={1280}
-                    height={720}
-                    loading="lazy"
-                    decoding="async"
-                    className="aspect-video w-full rounded-xl object-cover"
-                  />
-                  <figcaption className="mt-3">
-                    <p className="text-sm font-semibold text-white">{shot.title}</p>
-                    <p className="mt-1 text-xs leading-relaxed text-white/60">{shot.detail}</p>
-                  </figcaption>
-                </figure>
-              ))}
-            </div>
+            <h2
+              id="feature-preview-heading"
+              className="mt-3 text-2xl font-semibold tracking-tight text-white sm:text-3xl"
+            >
+              {HOME_HEADINGS.h2Featured}
+            </h2>
+            <p className="mt-3 max-w-2xl text-sm leading-relaxed text-white/55 sm:text-base">
+              Browse wallhack, combat and push screenshots — then open the video for the full
+              in-raid clip with player ESP and wallhack overlays.
+            </p>
+            <FeaturePreviewShowcase className="mt-8" />
           </div>
         </section>
 
