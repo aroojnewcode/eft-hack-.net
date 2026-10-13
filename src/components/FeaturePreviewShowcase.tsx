@@ -99,8 +99,9 @@ export function FeaturePreviewShowcase({
             alt={scene.imageAlt}
             width={1280}
             height={720}
-            loading={priority ? 'eager' : 'lazy'}
+            loading={priority && index === 0 && !videoMode ? 'eager' : 'lazy'}
             decoding="async"
+            fetchPriority={priority && index === 0 && !videoMode ? 'high' : 'low'}
             className="absolute inset-0 z-[1] h-full w-full object-cover"
           />
         )}

@@ -283,11 +283,11 @@ const robots = readFileSync(join(dist, 'robots.txt'), 'utf8')
 if (!robots.includes('Sitemap: https://efthack.net/sitemap.xml')) {
   fail('robots.txt must point at the canonical HTTPS sitemap')
 }
-if (!robots.includes('Sitemap: https://www.efthack.net/sitemap.xml')) {
-  fail('robots.txt must list www sitemap for URL-prefix GSC properties')
+if (robots.includes('Sitemap: https://www.efthack.net/')) {
+  fail('robots.txt must list apex sitemap only (no www Sitemap lines)')
 }
-if (!robots.includes('Sitemap: https://efthack.net/sitemap-index.xml')) {
-  fail('robots.txt must list sitemap index for GSC')
+if (/^Sitemap:/m.test(robots) && (robots.match(/^Sitemap:/gm) || []).length !== 1) {
+  fail('robots.txt must contain exactly one Sitemap line (apex /sitemap.xml)')
 }
 if (!robots.includes('Allow: /sitemap.xml')) {
   fail('robots.txt must explicitly allow /sitemap.xml')

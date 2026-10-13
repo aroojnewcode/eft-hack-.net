@@ -33,5 +33,3 @@ Disallow: /404
 Disallow: /404.html
 
 Sitemap: https://efthack.net/sitemap.xml
-Sitemap: https://www.efthack.net/sitemap.xml
-Sitemap: https://efthack.net/sitemap-index.xml

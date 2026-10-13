@@ -524,8 +524,6 @@ function main() {
       'Disallow: /404.html',
       '',
       `Sitemap: ${siteUrl('/sitemap.xml')}`,
-      'Sitemap: https://www.efthack.net/sitemap.xml',
-      `Sitemap: ${siteUrl('/sitemap-index.xml')}`,
       '',
     ].join('\n'),
     'utf8',

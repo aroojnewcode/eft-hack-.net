@@ -91,7 +91,7 @@ export const SEO = {
   reviews: {
     title: 'EFT Hack Reviews | Buyer Feedback on Escape From Tarkov',
     description:
-      'Read EFT hack reviews covering silent aim, player ESP and anti-cheat rebuilds before you buy an Escape From Tarkov license for PC.',
+      'Read EFT hack reviews on efthack.net — silent aim, player ESP, BattlEye rebuilds and delivery speed before you buy an Escape From Tarkov license for PC.',
     path: '/reviews',
     ogType: 'website',
     image: PAGE_OG.reviews,

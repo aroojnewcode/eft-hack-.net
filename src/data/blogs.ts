@@ -53,14 +53,14 @@ export const BLOGS: BlogPost[] = [
         heading: 'ESP, wallhack and utility highlighting',
         body: [
           "Player ESP / wallhack — boxes, silhouettes, distance and health through walls, smokes and common angles on Customs, Woods and other maps.",
-          'Loot and quest ESP — track the objective, cooldowns and utility when the build supports it so rotates and retakes stay informed.',
+          'Loot and quest ESP — track quest items, extracts and high-value loot when the build supports it so rotates through Customs or Woods stay informed.',
           'Player info — names, health and gear readouts on PMCs when enabled so you know who to challenge first.',
         ],
       },
       {
         heading: 'Radar and extras',
         body: [
-          'Radar hack — 2D radar for off-screen players and flanks around objectives and mid-fight rotations.',
+          'Radar hack — 2D radar for off-screen PMCs and flanks around Interchange mall wings and mid-raid rotations.',
           'Triggerbot and misc toggles — optional when included in the current build; confirm on the product page before checkout.',
           'Spoofer — hardware identifier protection when the current build includes it.',
           'Stream-proof — keep supported overlays out of OBS and common capture tools.',
@@ -128,7 +128,7 @@ export const BLOGS: BlogPost[] = [
     metaTitle: 'EFT ESP Wallhack Setup | Player Boxes & Utility ESP',
     metaDescription:
       'EFT ESP and wallhack setup: player boxes, skeletons, distance, health, loot and quest ESP through cover. Clean HUD defaults for EFT hack on PC.',
-    searchTerms: 'eft esp wallhack eft hack player boxes utility esp objective esp eft cheat',
+    searchTerms: 'eft esp wallhack eft hack player boxes loot esp quest markers eft cheat',
     date: '2026-09-17',
     readMinutes: 9,
     tag: 'ESP',
@@ -138,22 +138,22 @@ export const BLOGS: BlogPost[] = [
         heading: 'What EFT ESP actually does',
         body: [
           'EFT ESP draws players and gear through walls and smoke before you wide-swing a doorway. It does not pull the trigger.',
-          'Most searches for “eft wallhack” or “eft esp” want this awareness layer — in a round where one blind peek costs the site, information beats loud Aimbot.',
+          'Most searches for “eft wallhack” or “eft esp” want this awareness layer — in a raid where one blind peek on Customs costs your kit, information beats loud Aimbot.',
         ],
       },
       {
         heading: 'Player and utility ESP',
         body: [
           'Enable boxes or skeletons, distance and health. Colour-code enemies clearly and keep teammates readable if the build supports it.',
-          'Loot and quest ESP helps on re-engagements — know where grenades landed and whether the extract or objective is contested before you commit through cover.',
+          'Loot and quest ESP helps on re-engagements — know where grenades landed and whether the extract on Woods or a quest zone on Interchange is hot before you commit through cover.',
           'Limit max distance so the HUD is not flooded with far contacts you cannot fight this second.',
         ],
       },
       {
-        heading: 'ESP filters and objective lanes',
+        heading: 'ESP filters and map reads',
         body: [
-          'Filter overlays: player names, health bars and loot tags only when you need them. Too many labels creates tunnel vision on long hallways or open yards.',
-          'In CQC fights, pair player ESP with radar so you read rotates onto extracts or quest areas without tunnel vision.',
+          'Filter overlays: player names, health bars and loot tags only when you need them. Too many labels creates tunnel vision on Interchange garages or Customs dorms halls.',
+          'In CQC fights, pair player ESP with radar so you read rotates toward extracts on Woods or quest areas on Customs without tunnel vision.',
         ],
       },
       {
@@ -168,10 +168,10 @@ export const BLOGS: BlogPost[] = [
     slug: 'radar-hack-guide',
     title: 'Tarkov Radar Hack Overlay Guide',
     excerpt:
-      'Use the EFT radar hack 2D overlay to track off-screen players, avoid flanks and approach the objective safer.',
+      'Use the EFT radar hack 2D overlay to track off-screen players, avoid flanks and push extracts on Customs or mall wings on Interchange with better info.',
     metaTitle: 'Tarkov Radar Hack Guide | 2D Overlay for Off-Screen Players',
     metaDescription:
-      'EFT radar hack guide for PC: 2D radar overlay, off-screen enemy tracking and safer objective approaches. Pair with ESP so your EFT hack stays readable.',
+      'EFT radar hack guide for PC: 2D radar overlay, off-screen PMC tracking and safer rotates on Woods, Customs and Interchange. Pair with ESP so your EFT hack stays readable.',
     searchTerms: 'eft radar hack eft hack 2d radar overlay off screen eft cheat',
     date: '2026-09-17',
     readMinutes: 8,
@@ -475,21 +475,21 @@ export const BLOGS: BlogPost[] = [
       {
         heading: 'Tarkov is a report environment',
         body: [
-          'Anti-cheat is not the only risk. Battlestate and server admins review reports, and a player who lost a close team fight will file one fast. Conservative visuals beat loud Aimbot.',
+          'Anti-cheat is not the only risk. Battlestate reviews reports, and a PMC who lost a close fight on Customs or Interchange will file one fast. Conservative visuals beat loud Aimbot.',
         ],
       },
       {
         heading: 'Recommended raid stack',
         body: [
           'Player ESP, utility ESP, loot and quest ESP and radar on; Aimbot off or heavily smoothed; short ESP range; stream-proof on if you clip.',
-          'Save this as a match config. A coordinated push retake config can be slightly more aggressive, but silent aim should still look natural.',
+          'Save this as a raid config. A hotter CQB stack for dorms or mall fights can be slightly more aggressive, but silent aim should still look natural.',
         ],
       },
       {
         heading: 'Map habits that pay',
         body: [
           'Early raid contact: short-range ESP and gear tracking while you loot. Mid-raid CQB fights: radar first, loot and quest ESP second, mild silent aim only if you must swing.',
-          'Retakes and lurk timings: confirm objective contest and rotate info from radar before you commit through cover.',
+          'Late-raid lurks: confirm extract contest and rotate info from radar before you push through cover on Woods or Customs.',
           'If anti-cheat flips to Updating mid-session, stop. Waiting is cheaper than forcing a rebuild window.',
         ],
       },
