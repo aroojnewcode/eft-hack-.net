@@ -6,6 +6,7 @@ import { PRODUCT_PATH, SITE_NAME } from '../data/site'
 
 /** Lean nav — Reviews stay in footer. */
 const NAV_LINKS = [
+  { label: 'Home', to: '/' },
   { label: 'Forums', to: '/forums' },
   { label: 'Product', to: PRODUCT_PATH },
   { label: 'Reviews', to: '/reviews' },
@@ -87,13 +88,6 @@ export function Navbar({ onVideo: _onVideo = false }: NavbarProps) {
         }`}
       >
         <div className="flex flex-col gap-1 px-5 pt-24">
-          <a
-            href="/"
-            onClick={() => setMenuOpen(false)}
-            className="rounded-xl px-4 py-3 text-base font-medium text-z-ink/80 transition-all hover:bg-z-accent/15 hover:text-z-ink"
-          >
-            Home
-          </a>
           {NAV_LINKS.map((link, index) => (
             <a
               key={link.label}
@@ -103,7 +97,7 @@ export function Navbar({ onVideo: _onVideo = false }: NavbarProps) {
               style={{
                 opacity: menuOpen ? 1 : 0,
                 transform: menuOpen ? 'translateX(0)' : 'translateX(24px)',
-                transitionDelay: menuOpen ? `${(index + 1) * 50}ms` : '0ms',
+                transitionDelay: menuOpen ? `${index * 50}ms` : '0ms',
               }}
             >
               {link.label}

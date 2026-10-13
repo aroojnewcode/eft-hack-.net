@@ -6,6 +6,7 @@ import { VideoBg } from '../components/VideoBg'
 import { HeroSearch } from '../components/HeroSearch'
 import { BLOGS, blogPath } from '../data/blogs'
 import { CheckoutLink } from '../components/CheckoutLink'
+import { EFT_HERO_POSTER, EFT_HERO_POSTER_ALT } from '../data/media'
 import { SITE_HOST } from '../data/site'
 
 type ForumsPageProps = {
@@ -30,16 +31,21 @@ export function ForumsPage({ initialQuery = '' }: ForumsPageProps) {
 
   return (
     <div className="min-h-screen overflow-x-hidden bg-z-bg text-white">
-      <section className="relative flex min-h-[60vh] flex-col overflow-x-clip sm:min-h-[65vh]">
+      <section
+        id="forums-hero"
+        className="relative flex min-h-[60vh] flex-col overflow-x-clip sm:min-h-[65vh]"
+      >
         <VideoBg
-          image="/media/eft-esp-street.png"
-          imageAlt="Escape From Tarkov ESP screenshot with cyan enemy silhouettes and distance markers through doorways"
+          image={EFT_HERO_POSTER}
+          imageAlt={EFT_HERO_POSTER_ALT}
+          imagePosition="right center"
+          posterGrade
         />
         <div className="relative z-20 flex min-h-[60vh] flex-col sm:min-h-[65vh]">
           <Navbar onVideo />
           <div className="page-x mt-auto pb-10 sm:pb-14">
             <div className="relative z-30 mx-auto max-w-6xl">
-              <p className="mb-3 text-xs font-medium uppercase tracking-[0.2em] text-white/50">
+              <p className="home-hero-eyebrow mb-3 text-xs font-semibold uppercase tracking-[0.2em]">
                 Forums · Setup · {SITE_HOST}
               </p>
               <h1 className="text-3xl font-semibold tracking-tight text-white sm:text-5xl">

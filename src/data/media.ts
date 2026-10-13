@@ -17,6 +17,11 @@ export const EFT_SHOT_ESP_AIMBOT = '/media/eft-esp-aimbot.webp'
 export const EFT_PRODUCT_COVER = '/media/eft-product-cover.webp'
 export const EFT_SHOT_INDOOR_ESP = '/media/eft-radar-skeleton.webp'
 
+/** Wide banner used on home + forums heroes (WebP, optimized for LCP). */
+export const EFT_HERO_POSTER = '/media/eft-hero-poster.webp'
+export const EFT_HERO_POSTER_ALT =
+  'Escape From Tarkov hero banner — tactical PMCs in a war-torn industrial cityscape at dusk'
+
 export const EFT_HERO = EFT_SHOT_WALLHACK
 export const EFT_SOLDIER = EFT_SHOT_WALLHACK
 export const EFT_COVER = EFT_PRODUCT_COVER

@@ -9,6 +9,8 @@ type VideoBgProps = {
   imagePosition?: string
   /** Short muted loop. Loaded after first paint to protect LCP. */
   video?: string
+  /** Lighter tint + brighter grade (home / forums poster banners). */
+  posterGrade?: boolean
 }
 
 /** Full-bleed hero. Poster paints first; optional loop loads when in view. */
@@ -17,6 +19,7 @@ export function VideoBg({
   imageAlt = 'Escape From Tarkov hero gameplay preview on the homepage background',
   imagePosition = 'center',
   video,
+  posterGrade = false,
 }: VideoBgProps) {
   const mediaStyle = { objectPosition: imagePosition }
   const wrapRef = useRef<HTMLDivElement>(null)
@@ -88,7 +91,9 @@ export function VideoBg({
         height={499}
         decoding="async"
         fetchPriority="high"
-        className="hero-video-bg absolute inset-0 z-[1] h-full w-full object-cover"
+        className={`hero-video-bg absolute inset-0 z-[1] h-full w-full object-cover${
+          posterGrade ? ' home-hero-poster' : ''
+        }`}
         style={mediaStyle}
       />
       {video && playVideo ? (
@@ -106,10 +111,35 @@ export function VideoBg({
           <source src={video} type="video/mp4" />
         </video>
       ) : null}
-      <div className="hero-video-tint pointer-events-none absolute inset-0 z-[2]" aria-hidden />
-      <div className="hero-video-tint-glow pointer-events-none absolute inset-0 z-[2]" aria-hidden />
-      <div className="absolute inset-x-0 bottom-0 z-[3] h-40 bg-gradient-to-t from-z-bg via-z-bg/80 to-transparent" />
-      <div className="absolute inset-x-0 top-0 z-[3] h-24 bg-gradient-to-b from-z-bg/70 to-transparent" />
+      <div
+        className={`hero-video-tint pointer-events-none absolute inset-0 z-[2]${
+          posterGrade ? ' home-hero-tint' : ''
+        }`}
+        aria-hidden
+      />
+      <div
+        className={`hero-video-tint-glow pointer-events-none absolute inset-0 z-[2]${
+          posterGrade ? ' home-hero-tint-glow' : ''
+        }`}
+        aria-hidden
+      />
+      {posterGrade ? (
+        <>
+          <div
+            className="home-hero-fade-bottom absolute inset-x-0 bottom-0 z-[3] h-32 bg-gradient-to-t from-z-bg/85 via-z-bg/35 to-transparent"
+            aria-hidden
+          />
+          <div
+            className="home-hero-fade-top absolute inset-x-0 top-0 z-[3] h-16 bg-gradient-to-b from-z-bg/35 to-transparent"
+            aria-hidden
+          />
+        </>
+      ) : (
+        <>
+          <div className="absolute inset-x-0 bottom-0 z-[3] h-40 bg-gradient-to-t from-z-bg via-z-bg/80 to-transparent" />
+          <div className="absolute inset-x-0 top-0 z-[3] h-24 bg-gradient-to-b from-z-bg/70 to-transparent" />
+        </>
+      )}
     </div>
   )
 }

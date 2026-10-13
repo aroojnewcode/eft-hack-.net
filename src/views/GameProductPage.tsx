@@ -18,6 +18,7 @@ import { NotFoundPage } from './NotFoundPage'
 import { blogPath } from '../data/blogs'
 import { EFT_HOME_VIDEO } from '../data/media'
 import { EftProductPreview } from '../components/EftProductPreview'
+import { ProductCheckoutDetails } from '../components/ProductCheckoutDetails'
 
 function ProductPurchaseCard({ game }: { game: Game }) {
   return (
@@ -99,18 +100,7 @@ export function GameProductPage({ guideSlug }: GameProductPageProps) {
               <span className="min-w-0 text-white/70">Product details</span>
             </nav>
 
-            <div className="mt-6 sm:mt-8">
-              <h2 className="text-lg font-semibold tracking-tight text-white sm:text-xl">
-                Feature preview
-              </h2>
-              <p className="mt-2 max-w-2xl text-sm text-white/45">
-                {EFT_HOME_VIDEO.caption} Switch Match, Combat and Push tabs — then tap Video for the
-                full clip.
-              </p>
-              <EftProductPreview className="mt-4" priority />
-            </div>
-
-            <div className="mt-10 grid gap-8 lg:mt-12 lg:grid-cols-12 lg:items-start lg:gap-10">
+            <div className="mt-6 grid gap-8 sm:mt-8 lg:mt-12 lg:grid-cols-12 lg:items-start lg:gap-10">
               <div className="lg:col-span-7">
                 <span className="inline-flex items-center gap-1.5 text-xs text-z-soft">
                   <Shield className="h-3.5 w-3.5 shrink-0" strokeWidth={1.75} />
@@ -121,68 +111,16 @@ export function GameProductPage({ guideSlug }: GameProductPageProps) {
                   EFT Hack Price & Checkout
                 </h1>
                 <p className="mt-3 max-w-xl text-sm leading-relaxed text-white/55 sm:mt-4 sm:text-base">
-                  Silent aim Aimbot, player ESP, wallhack and radar for Escape From Tarkov on PC.
-                  Confirm anti-cheat status, then checkout — worldwide delivery.
+                  Buy an Escape From Tarkov hack license from ${PRODUCT_PRICE_USD} — silent aim
+                  Aimbot, player ESP, wallhack and radar on Windows PC. Confirm live BattlEye status
+                  on {SITE_HOST}, then checkout for instant digital delivery worldwide.
                 </p>
+
+                <ProductCheckoutDetails game={game} />
 
                 <div className="mt-6 lg:hidden">
                   <ProductPurchaseCard game={game} />
                 </div>
-
-                <div className="mt-10">
-                  <h2 className="text-lg font-semibold tracking-tight text-white sm:text-xl">
-                    Included features
-                  </h2>
-                  <ul className="mt-4 space-y-3">
-                    {GUIDE_FEATURES.map((f) => (
-                      <li key={f.name} className="flex items-start gap-3">
-                        <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-z-accent/20">
-                          <Check className="h-3 w-3 text-z-soft" strokeWidth={2.5} />
-                        </span>
-                        <div className="min-w-0">
-                          <p className="text-sm font-semibold text-white">{f.name}</p>
-                          <p className="mt-0.5 text-sm leading-relaxed text-white/50">{f.text}</p>
-                        </div>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-
-                <div className="mt-12 space-y-8 text-sm leading-relaxed text-white/55">
-                  <div>
-                    <h2 className="text-lg font-semibold tracking-tight text-white sm:text-xl">
-                      Raids & BattlEye
-                    </h2>
-                    <p className="mt-3">
-                      Built for PMC raids, SCAV runs and offline on Escape From Tarkov.
-                      After a client or anti-cheat patch, status may show Updating until tested —{' '}
-                      {SITE_NAME} publishes live status so you are not buying a dead loader. Status
-                      first, load second.
-                    </p>
-                  </div>
-
-                  <div>
-                    <h2 className="text-lg font-semibold tracking-tight text-white sm:text-xl">
-                      Checkout and delivery
-                    </h2>
-                    <ol className="mt-3 list-decimal space-y-2 pl-5">
-                      <li>Confirm current status on {SITE_HOST}.</li>
-                      <li>Only load when status is clear (or accept Updating risk).</li>
-                      <li>Checkout for digital license delivery worldwide.</li>
-                      <li>
-                        Follow the{' '}
-                        <a
-                          href={blogPath('complete-setup')}
-                          className="text-white/80 underline-offset-2 hover:underline"
-                        >
-                          complete setup guide
-                        </a>{' '}
-                        after delivery.
-                      </li>
-                    </ol>
-                  </div>
-                </div>
-
               </div>
 
               <aside className="hidden lg:col-span-5 lg:block">
@@ -190,6 +128,70 @@ export function GameProductPage({ guideSlug }: GameProductPageProps) {
                   <ProductPurchaseCard game={game} />
                 </div>
               </aside>
+            </div>
+
+            <div className="mt-10 border-t border-white/10 pt-10 sm:mt-12 sm:pt-12">
+              <h2 className="text-lg font-semibold tracking-tight text-white sm:text-xl">
+                Feature preview
+              </h2>
+              <p className="mt-2 max-w-2xl text-sm text-white/45">
+                {EFT_HOME_VIDEO.caption} Switch Match, Combat and Push tabs — then tap Video for the
+                full clip.
+              </p>
+              <EftProductPreview className="mt-4" />
+            </div>
+
+            <div className="mt-10 max-w-3xl sm:mt-12">
+              <h2 className="text-lg font-semibold tracking-tight text-white sm:text-xl">
+                Included features
+              </h2>
+              <ul className="mt-4 space-y-3">
+                {GUIDE_FEATURES.map((f) => (
+                  <li key={f.name} className="flex items-start gap-3">
+                    <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-z-accent/20">
+                      <Check className="h-3 w-3 text-z-soft" strokeWidth={2.5} />
+                    </span>
+                    <div className="min-w-0">
+                      <p className="text-sm font-semibold text-white">{f.name}</p>
+                      <p className="mt-0.5 text-sm leading-relaxed text-white/50">{f.text}</p>
+                    </div>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div className="mt-12 max-w-3xl space-y-8 text-sm leading-relaxed text-white/55">
+              <div>
+                <h2 className="text-lg font-semibold tracking-tight text-white sm:text-xl">
+                  Raids & BattlEye
+                </h2>
+                <p className="mt-3">
+                  Built for PMC raids, SCAV runs and offline on Escape From Tarkov. After a client or
+                  anti-cheat patch, status may show Updating until tested — {SITE_NAME} publishes live
+                  status so you are not buying a dead loader. Status first, load second.
+                </p>
+              </div>
+
+              <div>
+                <h2 className="text-lg font-semibold tracking-tight text-white sm:text-xl">
+                  Checkout and delivery
+                </h2>
+                <ol className="mt-3 list-decimal space-y-2 pl-5">
+                  <li>Confirm current status on {SITE_HOST}.</li>
+                  <li>Only load when status is clear (or accept Updating risk).</li>
+                  <li>Checkout for digital license delivery worldwide.</li>
+                  <li>
+                    Follow the{' '}
+                    <a
+                      href={blogPath('complete-setup')}
+                      className="text-white/80 underline-offset-2 hover:underline"
+                    >
+                      complete setup guide
+                    </a>{' '}
+                    after delivery.
+                  </li>
+                </ol>
+              </div>
             </div>
           </div>
         </section>

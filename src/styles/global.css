@@ -244,6 +244,37 @@ body {
   opacity: 0.55;
 }
 
+/* Poster heroes (home + forums) — show more of the banner; lighter grade than cheat screenshots */
+#home .home-hero-poster,
+#forums-hero .home-hero-poster {
+  filter: saturate(1.08) contrast(1.06) brightness(1.06) hue-rotate(2deg);
+}
+
+#home .home-hero-tint,
+#forums-hero .home-hero-tint {
+  background:
+    linear-gradient(
+      180deg,
+      rgba(88, 48, 120, 0.12) 0%,
+      rgba(40, 28, 64, 0.08) 50%,
+      rgba(8, 6, 15, 0.28) 100%
+    ),
+    radial-gradient(ellipse 85% 65% at 72% 35%, rgba(251, 191, 36, 0.08), transparent 60%);
+  mix-blend-mode: normal;
+  opacity: 0.55;
+}
+
+#home .home-hero-tint-glow,
+#forums-hero .home-hero-tint-glow {
+  opacity: 0.22;
+}
+
+#home .home-hero-eyebrow,
+#forums-hero .home-hero-eyebrow {
+  color: rgba(254, 243, 199, 0.92);
+  text-shadow: 0 1px 12px rgba(0, 0, 0, 0.45);
+}
+
 .hero-video-bg::-webkit-media-controls,
 .hero-video-bg::-webkit-media-controls-enclosure,
 .hero-video-bg::-webkit-media-controls-panel,
