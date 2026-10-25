@@ -22,7 +22,9 @@ export default defineConfig({
     plugins: [sitemapBrowserViewPlugin()],
     server: {
       port: 5174,
-      strictPort: true,
+      // If a stale `npm run dev` left 5174 busy, Vite picks the next free port instead of exiting silently.
+      strictPort: false,
+      host: true,
     },
     preview: {
       port: 5175,
