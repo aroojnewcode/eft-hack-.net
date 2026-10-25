@@ -1,21 +1,22 @@
 ﻿# Cloudflare Workers + static assets — required so CI `npx wrangler deploy` succeeds.
-# (Dashboard is locked to that command; `wrangler pages deploy` is not used.)
-name = "efthack-net"
+# Worker name must match Workers Builds in the dashboard (eft-hack--net).
+name = "eft-hack--net"
 main = "workers/site.js"
 compatibility_date = "2026-09-12"
 
-# Cloudflare CI invokes `npx wrangler deploy` directly. Build Astro first so
-# the static-assets directory exists before Wrangler validates it.
+# Cloudflare CI runs `npm run build` then `wrangler deploy`. Keep this for local deploys.
 [build]
 command = "npm run build"
 
+# Zone routes (do not use custom_domain here — Wrangler would try to create DNS and
+# fails with 100117 if apex/www already have manual A/CNAME records).
 [[routes]]
-pattern = "efthack.net"
-custom_domain = true
+pattern = "efthack.net/*"
+zone_name = "efthack.net"
 
 [[routes]]
-pattern = "www.efthack.net"
-custom_domain = true
+pattern = "www.efthack.net/*"
+zone_name = "efthack.net"
 
 [assets]
 directory = "./dist"
