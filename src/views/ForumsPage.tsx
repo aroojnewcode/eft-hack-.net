@@ -1,13 +1,9 @@
 import { useMemo, useState } from 'react'
 import { ArrowRight } from 'lucide-react'
-import { Navbar } from '../components/Navbar'
 import { SiteFooter } from '../components/SiteFooter'
-import { VideoBg } from '../components/VideoBg'
 import { HeroSearch } from '../components/HeroSearch'
 import { BLOGS, blogPath } from '../data/blogs'
 import { CheckoutLink } from '../components/CheckoutLink'
-import { EFT_HERO_POSTER, EFT_HERO_POSTER_ALT } from '../data/media'
-import { SITE_HOST } from '../data/site'
 
 type ForumsPageProps = {
   initialQuery?: string
@@ -31,51 +27,21 @@ export function ForumsPage({ initialQuery = '' }: ForumsPageProps) {
 
   return (
     <div className="min-h-screen overflow-x-hidden bg-z-bg text-white">
-      <section
-        id="forums-hero"
-        className="relative flex min-h-[60vh] flex-col overflow-x-clip sm:min-h-[65vh]"
-      >
-        <VideoBg
-          image={EFT_HERO_POSTER}
-          imageAlt={EFT_HERO_POSTER_ALT}
-          imagePosition="right center"
-          posterGrade
-        />
-        <div className="relative z-20 flex min-h-[60vh] flex-col sm:min-h-[65vh]">
-          <Navbar onVideo />
-          <div className="page-x mt-auto pb-10 sm:pb-14">
-            <div className="relative z-30 mx-auto max-w-6xl">
-              <p className="home-hero-eyebrow mb-3 text-xs font-semibold uppercase tracking-[0.2em]">
-                Forums · Setup · {SITE_HOST}
-              </p>
-              <h1 className="text-3xl font-semibold tracking-tight text-white sm:text-5xl">
-                EFT Hack Guides
-              </h1>
-              <p className="mt-4 max-w-2xl text-base leading-relaxed text-white/70">
-                Setup threads for EFT Hack — features, hotkeys, complete setup,
-                disable antivirus, how to load, and live anti-cheat status before you checkout.
-              </p>
-              <div className="relative z-50 mt-7">
-                <HeroSearch
-                  value={q}
-                  onChange={onSearchChange}
-                  submitTo="filter"
-                  placeholder="Search forums — setup, antivirus, hotkeys…"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <div className="hero-to-body" aria-hidden />
-
       <main className="page-body relative z-10">
         <section className="page-x py-12">
           <div className="mx-auto max-w-6xl">
+            <div className="relative z-20 mb-8 max-w-xl">
+              <HeroSearch
+                value={q}
+                onChange={onSearchChange}
+                submitTo="filter"
+                placeholder="Search forums — setup, antivirus, hotkeys…"
+              />
+            </div>
+
             <div className="page-card mb-10 flex flex-col gap-4 rounded-2xl p-6 sm:flex-row sm:items-center sm:justify-between sm:p-8">
               <div>
-                <p className="text-xs uppercase tracking-wider text-white/45">Product</p>
+                <p className="text-xs uppercase tracking-wider text-white/55">Product</p>
                 <h2 className="mt-1 text-xl font-semibold text-white">EFT Hack</h2>
                 <p className="mt-2 max-w-xl text-sm text-white/55">
                   Buy ESP, wallhack & silent aim Aimbot for Escape From Tarkov — live anti-cheat status
@@ -93,7 +59,7 @@ export function ForumsPage({ initialQuery = '' }: ForumsPageProps) {
               <h2 className="text-xl font-semibold tracking-tight text-white">
                 {q.trim() ? 'Search results' : 'All forum threads'}
               </h2>
-              <p className="text-sm text-white/40">
+              <p className="text-sm text-white/55">
                 {filtered.length} thread{filtered.length === 1 ? '' : 's'}
               </p>
             </div>
@@ -120,10 +86,10 @@ export function ForumsPage({ initialQuery = '' }: ForumsPageProps) {
                     className="page-card group flex h-full flex-col rounded-2xl p-5 sm:p-6"
                   >
                     <div className="flex items-center justify-between gap-2">
-                      <span className="text-xs font-medium uppercase tracking-wider text-white/45">
+                      <span className="text-xs font-medium uppercase tracking-wider text-white/55">
                         {post.tag}
                       </span>
-                      <span className="text-xs text-white/35">{post.readMinutes} min</span>
+                      <span className="text-xs text-white/50">{post.readMinutes} min</span>
                     </div>
                     <h3 className="mt-3 text-base font-semibold tracking-tight text-white sm:text-lg">
                       {post.title}

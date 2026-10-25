@@ -1,0 +1,47 @@
+---
+import { HOME_HEADINGS } from '../data/site'
+
+const FEATURES = [
+  {
+    label: 'EFT Aimbot',
+    desc:
+      'Silent aim with FOV, smoothing and bone selection — shots land near an enemy and still look legit.',
+  },
+  {
+    label: 'ESP / Wallhack',
+    desc:
+      'Player boxes, distance and health through walls — loot value and quest markers when supported.',
+  },
+  {
+    label: 'Radar hack',
+    desc: '2D radar for off-screen PMCs so flanks stop ending your raids on Customs and Woods.',
+  },
+  {
+    label: 'anti-cheat status',
+    desc: 'We publish live anti-cheat status after Tarkov patches — clear to load, or wait.',
+  },
+] as const
+---
+
+<div class="page-body relative z-10 text-white">
+  <section class="page-band page-x border-t border-z-soft/15 py-14">
+    <div class="mx-auto max-w-6xl">
+      <h2 class="mb-6 text-xl font-semibold tracking-tight text-white sm:text-2xl">
+        {HOME_HEADINGS.h2Features}
+      </h2>
+      <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        {
+          FEATURES.map(({ label, desc }) => (
+            <div class="page-card flex h-full min-h-[168px] flex-col rounded-2xl p-5">
+              <div class="icon-well mb-4" aria-hidden="true">
+                <span class="text-xs font-bold text-z-soft">{label.slice(0, 1)}</span>
+              </div>
+              <p class="text-sm font-semibold text-white">{label}</p>
+              <p class="mt-2 flex-1 text-sm leading-relaxed text-white/55">{desc}</p>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+</div>

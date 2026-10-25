@@ -40,3 +40,9 @@ for (const file of walk(dist).sort()) {
   }
 }
 console.log(`\nPages with length flags: ${warn}`)
+
+const allowShort404 = 1
+if (warn > allowShort404) {
+  console.error(`Meta length audit failed: ${warn} pages outside SERP targets (allowed: ${allowShort404} for 404).`)
+  process.exit(1)
+}

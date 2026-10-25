@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro'
+import ForumsHero from '../components/ForumsHero.astro'
 import { ForumsPage } from '../views/ForumsPage'
 import { SEO, SITE_URL } from '../data/site'
 
@@ -17,5 +18,6 @@ const jsonLdExtra = [
 ---
 
 <BaseLayout seo={SEO.forums} jsonLdExtra={jsonLdExtra}>
+  <ForumsHero />
   <ForumsPage client:idle initialQuery={initialQuery} />
 </BaseLayout>

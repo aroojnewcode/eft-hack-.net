@@ -4,8 +4,9 @@ import { NotFoundPage } from '../views/NotFoundPage'
 import { SITE_NAME, OG_IMAGE, type PageSeo } from '../data/site'
 
 const seo: PageSeo = {
-  title: `Page Not Found | ${SITE_NAME}`,
-  description: `This page was not found. Browse EFT Hack guides instead.`,
+  title: `Page Not Found — EFT Hack Guides | ${SITE_NAME}`,
+  description:
+    'This URL is not on efthack.net. Go home for live BattlEye status, or open the forums for Aimbot, ESP, radar and setup guides before checkout.',
   path: '/404',
   image: OG_IMAGE,
   robots: 'noindex, follow',
@@ -14,6 +15,6 @@ const seo: PageSeo = {
 ---
 
 <BaseLayout seo={seo}>
-  <NotFoundPage client:visible />
+  <NotFoundPage client:idle />
 </BaseLayout>
 

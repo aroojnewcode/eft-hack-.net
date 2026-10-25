@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "astro dev --port 5174",
     "dev:kill-port": "node scripts/kill-dev-port.mjs",
-    "build": "node scripts/generate-seo-assets.mjs && node scripts/generate-sitemaps.mjs && astro build && node scripts/verify-seo.mjs",
+    "build": "node scripts/generate-seo-assets.mjs && node scripts/generate-sitemaps.mjs && astro build && node scripts/verify-seo.mjs && node scripts/audit-seo-meta.mjs",
     "preview": "astro preview --port 5175",
     "deploy": "wrangler deploy",
     "check": "astro check",
@@ -15,6 +15,7 @@
     "generate:hero-loop": "node scripts/generate-hero-loop.mjs",
     "generate:product-loop": "node scripts/generate-product-loop.mjs",
     "verify:seo": "node scripts/verify-seo.mjs",
+    "audit:meta": "node scripts/audit-seo-meta.mjs",
     "lint": "oxlint"
   },
   "dependencies": {

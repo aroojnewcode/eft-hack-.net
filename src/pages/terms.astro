@@ -1,6 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro'
-import { PolicyPage } from '../views/PolicyPage'
+import PolicyLayout from '../components/PolicyLayout.astro'
 import { SITE_URL } from '../data/site'
 import { getPolicyPage } from '../data/policies'
 import { PAGE_OG } from '../data/og'
@@ -28,5 +28,5 @@ const jsonLdExtra = [
 ---
 
 <BaseLayout seo={seo} jsonLdExtra={jsonLdExtra}>
-  <PolicyPage client:visible page={page} />
+  <PolicyLayout page={page} />
 </BaseLayout>

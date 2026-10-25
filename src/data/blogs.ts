@@ -171,7 +171,7 @@ export const BLOGS: BlogPost[] = [
       'Use the EFT radar hack 2D overlay to track off-screen players, avoid flanks and push extracts on Customs or mall wings on Interchange with better info.',
     metaTitle: 'Tarkov Radar Hack Guide | 2D Overlay for Off-Screen Players',
     metaDescription:
-      'EFT radar hack guide for PC: 2D radar overlay, off-screen PMC tracking and safer rotates on Woods, Customs and Interchange. Pair with ESP so your EFT hack stays readable.',
+      'EFT radar hack for PC: 2D overlay, off-screen PMC tracking and safer rotates on Woods, Customs and Interchange. Pair with ESP for readable raids.',
     searchTerms: 'eft radar hack eft hack 2d radar overlay off screen eft cheat',
     date: '2026-09-17',
     readMinutes: 8,

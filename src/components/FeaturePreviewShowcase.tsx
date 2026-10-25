@@ -175,7 +175,7 @@ export function FeaturePreviewShowcase({
           ))}
         </ul>
 
-        <div className="mt-6 flex flex-wrap gap-2">
+        <div className="mt-6 flex flex-wrap gap-2" role="tablist" aria-label="Feature preview scenes">
           {scenes.map((s) => {
             const Icon = s.icon
             const active = !videoMode && s.id === scene.id
@@ -183,6 +183,8 @@ export function FeaturePreviewShowcase({
               <button
                 key={s.id}
                 type="button"
+                role="tab"
+                aria-selected={active}
                 onClick={() => selectScene(s)}
                 className={`inline-flex items-center gap-2 rounded-full border px-4 py-2 text-sm font-medium transition-colors ${
                   active

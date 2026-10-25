@@ -1,7 +1,7 @@
 ﻿---
 import BaseLayout from '../layouts/BaseLayout.astro'
 import HomeHero from '../components/HomeHero.astro'
-import { HomeBelowFoldTop } from '../views/HomeBelowFoldTop'
+import HomeBelowFoldTop from '../components/HomeBelowFoldTop.astro'
 import { HomeFeaturePreview } from '../views/HomeFeaturePreview'
 import { HomeBelowFoldBottom } from '../views/HomeBelowFoldBottom'
 import { SEO } from '../data/site'
@@ -13,7 +13,7 @@ import { productCoreJsonLd } from '../lib/seo'
   jsonLdExtra={[productCoreJsonLd()]}
 >
   <HomeHero />
-  <HomeBelowFoldTop client:idle />
+  <HomeBelowFoldTop />
   <HomeFeaturePreview client:visible />
   <HomeBelowFoldBottom client:idle />
 </BaseLayout>

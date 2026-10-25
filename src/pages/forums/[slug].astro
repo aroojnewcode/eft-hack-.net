@@ -1,6 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro'
-import { BlogPostPage } from '../../views/BlogPostPage'
+import BlogPostArticle from '../../components/BlogPostArticle.astro'
 import { BLOGS, blogPath, getBlog } from '../../data/blogs'
 import { SITE_URL, type PageSeo } from '../../data/site'
 import { getForumMedia } from '../../data/media'
@@ -109,5 +109,5 @@ const jsonLdExtra = [
 ---
 
 <BaseLayout seo={seo} jsonLdExtra={jsonLdExtra}>
-  <BlogPostPage client:visible slug={post.slug} />
+  <BlogPostArticle post={post} />
 </BaseLayout>
